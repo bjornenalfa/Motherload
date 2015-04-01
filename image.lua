@@ -1,0 +1,104 @@
+image = {}
+local i = image
+
+i.backfill = love.graphics.newImage("img/backfillsquare.png")
+i.explosion = love.graphics.newImage("img/explosion.png")
+
+i.upgrade = love.graphics.newImage("img/upgrade.png")
+
+i.grass = love.graphics.newImage("img/grass2.png")
+i.dirt = love.graphics.newImage("img/dirt3.png")
+
+i.iron = love.graphics.newImage("img/iron2.png")
+i.bronze = love.graphics.newImage("img/bronze2.png")
+i.silver = love.graphics.newImage("img/silver2.png")
+i.gold = love.graphics.newImage("img/gold2.png")
+i.platinum = love.graphics.newImage("img/platinum.png")
+--i["purple platinum"] = love.graphics.newImage("img/purple_platinum.png")
+i.einsteinium = love.graphics.newImage("img/einsteinium2.png")
+i.emerald = love.graphics.newImage("img/emeralds.png")
+i.mithril = love.graphics.newImage("img/mithril.png") -- 10*gold
+i.ruby = love.graphics.newImage("img/ruby.png")
+i.adamant = love.graphics.newImage("img/adamant.png")
+i.diamond = love.graphics.newImage("img/diamond.png")
+i.wolfram = love.graphics.newImage("img/wolfram.png")
+i.amazonite = love.graphics.newImage("img/amazonite.png")
+i.galvorn = love.graphics.newImage("img/galvorn.png")
+i.juvelium = love.graphics.newImage("img/juvelium.png")
+i["death metal"] = love.graphics.newImage("img/death_metal.png")
+i.silima = love.graphics.newImage("img/silima.png")
+i.unobtainium = love.graphics.newImage("img/unobtainium.png")
+i.tilkal = love.graphics.newImage("img/tilkal.png")
+i.legendarium = love.graphics.newImage("img/legendarium.png")
+i.psykadelium = love.graphics.newImage("img/psykadelium.png")
+
+i.stone = love.graphics.newImage("img/stone3.png")
+i.lava = love.graphics.newImage("img/lava.png")
+i.gaspocket = love.graphics.newImage("img/transparent.png")
+--i.gaspocketvisible = love.graphics.newImage("img/gaspocket.png")
+
+i.orestore = love.graphics.newImage("img/sellspot.png")
+i.fuelstore = love.graphics.newImage("img/fuelstore.png")
+i.upgradestore = love.graphics.newImage("img/upgradestore.png")
+i.itemstore = love.graphics.newImage("img/itemstore.png")
+i.sputnik = love.graphics.newImage("img/sputnik.png")
+
+i.player = love.graphics.newImage("img/player.png")
+i.drill = love.graphics.newImage("img/drill.png")
+i.flame = love.graphics.newImage("img/flame.png")
+i.bands = {}
+for _ = 8,1,-1 do
+  table.insert(i.bands,love.graphics.newImage("img/band".._..".png"))
+end
+
+i.dirtParticle = love.graphics.newImage("img/dirtparticle.png")
+i.particleQuad = love.graphics.newQuad(15,15,10,10,40,40)
+
+i.stones = love.graphics.newImage("img/stones.png")
+i.dirtQuads = {}
+i.dirtScale = 5
+for y = 0,i.dirtScale-1 do
+  for x = 0,i.dirtScale-1 do
+    table.insert(i.dirtQuads,love.graphics.newQuad(x*40,y*40,40,40,40*i.dirtScale,40*i.dirtScale))
+  end
+end
+
+--[[i.roundDirtQuads = {}
+for i = 0,15 do
+  i.roundDirtQuads[i] = {}
+  for y = 0,i.dirtScale-1 do
+    for x = 0,i.dirtScale-1 do
+      table.insert(i.dirtQuads,love.graphics.newQuad(x*40,y*40,40,40,40*i.dirtScale,40*i.dirtScale))
+    end
+  end
+end]]
+
+i.roundDirt = {}
+for j = 0,15 do
+  i.roundDirt[j] = love.graphics.newImage("img/rounddirt/"..j..".png")
+end
+
+i.placeholder = love.graphics.newImage("img/placeholder.png")
+
+-- UPGRADES
+i.hulls = {}
+i.hulls.iron = love.graphics.newImage("img/upgrades/hulls/iron.png")
+i.hulls.angmallen = love.graphics.newImage("img/upgrades/hulls/angmallen.png")
+i.hulls.mithril = love.graphics.newImage("img/upgrades/hulls/mithril.png")
+i.hulls.diamond = love.graphics.newImage("img/upgrades/hulls/diamond.png")
+i.hulls.unobtainium = love.graphics.newImage("img/upgrades/hulls/unobtainium.png")
+i.hulls.galvorn = love.graphics.newImage("img/upgrades/hulls/galvorn.png")
+i.hulls.deathmetal = love.graphics.newImage("img/upgrades/hulls/deathmetal2.png")
+i.hulls.silima = love.graphics.newImage("img/upgrades/hulls/silima.png")
+i.hulls.forcefield = love.graphics.newImage("img/upgrades/hulls/forcefield.png")
+
+i.drills = {}
+i.drills.iron = love.graphics.newImage("img/upgrades/drills/iron.png")
+i.drills.gold = love.graphics.newImage("img/upgrades/drills/gold.png")
+i.drills.emerald = love.graphics.newImage("img/upgrades/drills/emerald.png")
+i.drills.adamant = love.graphics.newImage("img/upgrades/drills/adamant.png")
+i.drills.amazonite = love.graphics.newImage("img/upgrades/drills/amazonite.png")
+i.drills.juvelium = love.graphics.newImage("img/upgrades/drills/juvelium.png")
+i.drills.silima = love.graphics.newImage("img/upgrades/drills/silima.png")
+i.drills.tilkal = love.graphics.newImage("img/upgrades/drills/tilkal.png")
+i.drills.atomic = love.graphics.newImage("img/upgrades/drills/atomicdisassembler.png")
