@@ -6,6 +6,7 @@ function u.init()
     p.money = 100000000
     for i = 1,7 do
       u.purchase(i,9)
+      u.unlocked[i] = 9
     end
   else
     for i = 1,7 do
@@ -36,25 +37,25 @@ u.list = {
     {name="Tilkal Drill",description="Combine all the other drills and you get this...thing...",price=0,stat=100,image=image.drills.tilkal},
     {name="Atomic Dissasembler",description="> See that rock there? \n> What rock? \n> Precisely.",price=0,stat=120,image=image.drills.atomic}},
   -- ENGINES =============================================================================================================
-  { {name="Standard Engine",description="The standard mining rig engine. Not very fast.",price=0,stat=2,image=image.placeholder},
-    {name="Discombobulator engine",description="Solves all your problems. In an easy way.",price=750,stat=2.1,image=image.placeholder},
-    {name="Siege engine",description="Excellent for breaking down walls.",price=0,stat=2.25,image=image.placeholder},
-    {name="Lawnmower engine",description="Or you could just buy a lawnmower...",price=0,stat=2.4,image=image.placeholder},
-    {name="OMFG-42",description="Something something... I don't need a manual!",price=0,stat=2.55,image=image.placeholder},
-    {name="Steam engine",description="For the more oldschool gentleman.",price=0,stat=2.7,image=image.placeholder},
-    {name="V-6 SUPERTURBO",description="Because a Ferrari isn't fast enough.",price=0,stat=2.75,image=image.placeholder},
-    {name="Epsylon Zeta 731",description="Still only a prototype, don't ask how we got it.",price=0,stat=3,image=image.placeholder},
-    {name="Warp Drive",description="Rumoured to be able to move a spaceship at several light years per second. From what we can tell these rumours are not true.",price=0,stat=3.8,image=image.placeholder}},
+  { {name="Standard Engine",description="The standard mining rig engine. Not very fast.",price=0,stat=2,image=image.engines.standard},
+    {name="Discombobulator engine",description="Solves all your problems. In an easy way.",price=750,stat=2.1,image=image.engines.discombobulator},
+    {name="Siege engine",description="Excellent for breaking down walls.",price=0,stat=2.25,image=image.engines.siege},
+    {name="Lawnmower engine",description="Or you could just buy a lawnmower...",price=0,stat=2.4,image=image.engines.lawnmower},
+    {name="OMFG-42",description="Something something... I don't need a manual!",price=0,stat=2.55,image=image.engines.omfg},
+    {name="Steam engine",description="For the more oldschool gentleman.",price=0,stat=2.7,image=image.engines.steam},
+    {name="V-6 SUPERTURBO",description="Because a Ferrari isn't fast enough.",price=0,stat=2.75,image=image.engines.superturbo},
+    {name="Epsylon Zeta 731",description="Still only a prototype, don't ask how we got it.",price=0,stat=3,image=image.engines.epsylon},
+    {name="Warp Drive",description="Rumoured to be able to move a spaceship at several light years per second. From what we can tell these rumours are not true.",price=0,stat=3.8,image=image.engines.warp}},
   -- RADIATORS =============================================================================================================
-  { {name="No Radiator",description="I could have sworn I had a radiator yesterday...",price=0,stat=0,image=image.placeholder},
-    {name="Rusty Fan",description="There isn't really much point in buying this...",price=750,stat=0.11,image=image.placeholder},
-    {name="Cheap Radiator",description="It is cheap, therefore buy it!",price=0,stat=0.22,image=image.placeholder},
-    {name="Average Radiator",description="Well, it is average at least...",price=0,stat=0.33,image=image.placeholder},
-    {name="Water Cooler",description="Because if it works in computers...",price=0,stat=0.44,image=image.placeholder},
-    {name="Fridge Radiator",description="Fits good with the barreltank.",price=0,stat=0.55,image=image.placeholder},
-    {name="Freezer Radiator",description="If you would like to add som ice.",price=0,stat=0.66,image=image.placeholder},
-    {name="Car Radiator",description="I admit, it came with the V-6 engine... But no more!",price=0,stat=0.77,image=image.placeholder},
-    {name="Standard Radiator",description="I knew I lost this somewhere!",price=0,stat=0.88,image=image.placeholder}},
+  { {name="No Radiator",description="I could have sworn I had a radiator yesterday...",price=0,stat=0,image=image.radiators.none},
+    {name="Rusty Fan",description="There isn't really much point in buying this...",price=750,stat=0.11,image=image.radiators.rusty},
+    {name="Cheap Fan",description="It is cheap, therefore buy it!",price=0,stat=0.22,image=image.radiators.cheap},
+    {name="Okay Radiator",description="Well, it works okay at least...",price=0,stat=0.33,image=image.radiators.okay},
+    {name="Water Cooler",description="Because if it works in computers...",price=0,stat=0.44,image=image.radiators.water},
+    {name="Fridge Radiator",description="Fridge intestines.",price=0,stat=0.55,image=image.radiators.fridge},
+    {name="Freezer",description="If you would like to add som ice.",price=0,stat=0.66,image=image.radiators.freezer},
+    {name="Car Radiator",description="I admit, it came with the V-6 engine... But no more!",price=0,stat=0.77,image=image.radiators.car},
+    {name="Standard Radiator",description="I knew I lost this somewhere!",price=0,stat=0.88,image=image.radiators.standard}},
   --FUEL TANKS =============================================================================================================
   { {name="Standard Fuel Tank",description="The standard mining rig fuel tank. Not very big.",price=0,stat=30,image=image.placeholder},
     {name="Truck Fuel Tank",description="Trucks were a way to transport things on Earth in the early 2000s.",price=750,stat=45,image=image.placeholder},

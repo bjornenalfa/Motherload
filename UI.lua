@@ -99,7 +99,7 @@ function UI.draw()
     elseif #hull == 1 then
       love.graphics.print(hull,171,35)
     end
-    love.graphics.printf(math.floor(p.digSpeed*10+0.5)/10,75,9,100,"top")
+    love.graphics.printf(math.floor(p.digSpeed*10+0.5)/10,75,9,100,"center")
   end
   if UI.level >= 5 then
     local fuelneeded = (40/p.digSpeed)*0.15

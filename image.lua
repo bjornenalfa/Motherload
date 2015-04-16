@@ -102,3 +102,27 @@ i.drills.juvelium = love.graphics.newImage("img/upgrades/drills/juvelium.png")
 i.drills.silima = love.graphics.newImage("img/upgrades/drills/silima.png")
 i.drills.tilkal = love.graphics.newImage("img/upgrades/drills/tilkal.png")
 i.drills.atomic = love.graphics.newImage("img/upgrades/drills/atomicdisassembler.png")
+
+i.engines = {}
+i.engines.standard = love.graphics.newImage("img/upgrades/engines/1.png")
+i.engines.discombobulator = love.graphics.newImage("img/upgrades/engines/2.png")
+i.engines.siege = love.graphics.newImage("img/upgrades/engines/3.png")
+i.engines.lawnmower = love.graphics.newImage("img/upgrades/engines/4.png")
+i.engines.omfg = love.graphics.newImage("img/upgrades/engines/5.png")
+i.engines.steam = love.graphics.newImage("img/upgrades/engines/8.png")
+i.engines.superturbo = love.graphics.newImage("img/upgrades/engines/7.png")
+i.engines.epsylon = love.graphics.newImage("img/upgrades/engines/6.png")
+i.engines.warp = love.graphics.newImage("img/upgrades/engines/9.png")
+
+i.radiators = {}
+i.radiators.none = love.graphics.newImage("img/transparent.png")
+i.radiators.rusty = love.graphics.newImage("img/upgrades/radiators/rusty.png")
+i.radiators.cheap = love.graphics.newImage("img/upgrades/radiators/cheap.png")
+i.radiators.okay = love.graphics.newImage("img/upgrades/radiators/okay.png")
+i.radiators.water = love.graphics.newImage("img/upgrades/radiators/water.png")
+i.radiators.fridge = love.graphics.newImage("img/upgrades/radiators/fridge.png")
+i.radiators.freezer = love.graphics.newImage("img/upgrades/radiators/freezer.png")
+i.radiators.car = love.graphics.newImage("img/upgrades/radiators/car.png")
+i.radiators.standard = love.graphics.newImage("img/upgrades/radiators/standard.png")
+
+--i.. = love.graphics.newImage("img/upgrades//.png")

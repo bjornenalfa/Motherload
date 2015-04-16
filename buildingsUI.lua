@@ -144,7 +144,8 @@ function buildingsUI.open(name)
       description:SetFont(font.x15)
       description:SetPos(116,18)
       description:SetMaxWidth(420-116-18)
-      description:SetText(owned.description)
+      --description:SetText(owned.description)
+      description:SetText(owned.description.."\n"..upgrades.statName[i].." "..owned.stat*upgrades.multiplier[i]..upgrades.statUnit[i])
       
       local purchase = new("button", panel2)
       purchase:SetSize(120,25)
@@ -184,7 +185,7 @@ function buildingsUI.open(name)
           local item = upgrades.list[i][t+1]
           currentImage:SetImage(item.image)
           name:SetText(item.name)--.." "..upgrades.names[i]:sub(1,#upgrades.names[i]-1))
-          description:SetText(item.description.." "..upgrades.statName[i].." "..item.stat*upgrades.multiplier[i]..upgrades.statUnit[i])
+          description:SetText(item.description.."\n"..upgrades.statName[i].." "..item.stat*upgrades.multiplier[i]..upgrades.statUnit[i])
           if upgrades.purchased[i][t+1] then
             local used = 1
             for _ = 1,9 do
@@ -268,13 +269,27 @@ function buildingsUI.open(name)
     
     local purchase = new("button", panel)
     purchase:SetSize(120,25)
-    purchase:SetPos(290,75)
+    purchase:SetPos(255,75)
     purchase:SetText("Purchase for "..selected.price)
     purchase:SetClickable(selected.price <= p.money)
     
     purchase.OnClick = (function()
       items.purchase(1)
       purchase:SetClickable(selected.price <= p.money)
+      owned:SetText("Owned: "..items.inventory[1])
+    end)
+  
+    local purchase5 = new("button", panel)
+    purchase5:SetSize(25,25)
+    purchase5:SetPos(385,75)
+    purchase5:SetText("x5")
+    purchase5:SetClickable(selected.price <= p.money/5)
+    
+    purchase5.OnClick = (function()
+      for j = 1,5 do
+        items.purchase(1)
+      end
+      purchase5:SetClickable(selected.price <= p.money/5)
       owned:SetText("Owned: "..items.inventory[1])
     end)
     
@@ -305,6 +320,15 @@ function buildingsUI.open(name)
         purchase.OnClick = (function()
           items.purchase(i)
           purchase:SetClickable(item.price <= p.money)
+          owned:SetText("Owned: "..items.inventory[i])
+        end)
+      
+        purchase5:SetClickable(item.price <= p.money/5)
+        purchase5.OnClick = (function()
+          for j = 1,5 do
+            items.purchase(i)
+          end
+          purchase5:SetClickable(item.price <= p.money/5)
           owned:SetText("Owned: "..items.inventory[i])
         end)
       end)
