@@ -54,7 +54,7 @@ hei ota minut kiinni, kiinni, kiinni, kiinni
 
 Apua, nämä lapset juoksevat perässäni]]},
   [225]={sender="Gammelsmurfen",message="Watch out for lava, it hurts your hull!!!"},
-  [300]={sender="Mr Norell",message="Watch out for gas pockets :)\n\nI would recommend buying a radiator and some hull!"}
+  [300]={sender="Mr Norell",message="Watch out for gas pockets :^)\n\nI would recommend buying a radiator and some hull!"}
   
   
 }
