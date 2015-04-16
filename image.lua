@@ -127,7 +127,15 @@ i.radiators.standard = love.graphics.newImage("img/upgrades/radiators/standard.p
 
 i.tanks = {}
 
-
+i.tanks.standard = love.graphics.newImage("img/upgrades/tanks/standard.png")
+i.tanks.truck = love.graphics.newImage("img/upgrades/tanks/truck.png")
+i.tanks.double = love.graphics.newImage("img/upgrades/tanks/double.png")
+i.tanks.wooden = love.graphics.newImage("img/upgrades/tanks/wooden.png")
+i.tanks.oil = love.graphics.newImage("img/upgrades/tanks/oil.png")
+i.tanks.fish = love.graphics.newImage("img/upgrades/tanks/fish.png")
+i.tanks.t34 = love.graphics.newImage("img/upgrades/tanks/t34.png")
+i.tanks.tiger = love.graphics.newImage("img/upgrades/tanks/tiger.png")
+i.tanks.algae = love.graphics.newImage("img/upgrades/tanks/algae.png")
 
 i.bays = {}
 
