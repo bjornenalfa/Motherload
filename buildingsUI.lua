@@ -139,6 +139,7 @@ function buildingsUI.open(name)
       name:SetFont(font.x20)
       name:SetText(owned.name)--.." "..upgrades.names[i]:sub(1,#upgrades.names[i]-1))
       name:SetPos(18,116)
+      name:SetMaxWidth(300)
       
       local description = new("text", panel2)
       description:SetFont(font.x15)
@@ -202,6 +203,7 @@ function buildingsUI.open(name)
           else
             purchase:SetText("Purchase for "..item.price)
             purchase:SetClickable(item.price <= p.money)
+            --backimage:SetColor(230,230,100,255)
           end
           purchase.OnClick = (function()
             purchase:SetText("Purchased")

@@ -43,7 +43,7 @@ p.digSpeed = 50
 p.digMA = 0.1
 p.digDelay = 0.1
 
-p.cargoSize = 6
+p.cargoSize = 0
 p.cargoUsed = 0
 p.cargo = {}
 if debugMode then

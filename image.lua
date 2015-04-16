@@ -126,7 +126,6 @@ i.radiators.car = love.graphics.newImage("img/upgrades/radiators/car.png")
 i.radiators.standard = love.graphics.newImage("img/upgrades/radiators/standard.png")
 
 i.tanks = {}
-
 i.tanks.standard = love.graphics.newImage("img/upgrades/tanks/standard.png")
 i.tanks.truck = love.graphics.newImage("img/upgrades/tanks/truck.png")
 i.tanks.double = love.graphics.newImage("img/upgrades/tanks/double.png")
@@ -138,11 +137,17 @@ i.tanks.tiger = love.graphics.newImage("img/upgrades/tanks/tiger.png")
 i.tanks.algae = love.graphics.newImage("img/upgrades/tanks/algae.png")
 
 i.bays = {}
-
-
+i.bays.standard = love.graphics.newImage("img/upgrades/bays/standard.png")
+i.bays.cardboard = love.graphics.newImage("img/upgrades/bays/cardboard.png")
+i.bays.bad = love.graphics.newImage("img/upgrades/bays/bad.png")
+--i.bays. = love.graphics.newImage("img/upgrades/bays/.png")
+i.bays.okay = love.graphics.newImage("img/upgrades/bays/okay.png")
+i.bays.cleaner = love.graphics.newImage("img/upgrades/bays/cleaner.png")
+--i.bays. = love.graphics.newImage("img/upgrades/bays/.png")
+i.bays.good = love.graphics.newImage("img/upgrades/bays/good.png")
+--i.bays. = love.graphics.newImage("img/upgrades/bays/.png")
 
 i.UI = {}
-
 
 
 --i.. = love.graphics.newImage("img/upgrades//.png")

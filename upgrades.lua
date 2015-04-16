@@ -67,15 +67,15 @@ u.list = {
     {name="Tiger II",description="Tigers were an animal on Earth that people killed for its excellent medical properties and beautiful päls och dis is lajk tåuh ov demh.",price=0,stat=150,image=image.tanks.tiger},
     {name="Living Algae Tank",description="This tank comes with genetically modified algae that are able to produce fuel using sunlight.",price=0,stat=160,image=image.tanks.algae}},
   -- CARGO BAYS =============================================================================================================
-  { {name="Standard Cargo Bay",description="The standard mining rig cargo bay. Not very big.",price=0,stat=6,image=image.placeholder},
-    {name="Extra small Cargo Bay",description="This box is on a diet",price=750,stat=7,image=image.placeholder},
-    {name="Small Cargo Bay",description="It' is like a dwarf small but sturdy. Why this is important nobody knows",price=0,stat=8,image=image.placeholder},
-    {name="Medium Cargo Storage",description="It stores and talks to dead ores",price=0,stat=10,image=image.placeholder},
-    {name="Large Cargo Strongbox",description="When size doesn't matter",price=0,stat=12,image=image.placeholder},
-    {name="Extra Large Booty Box",description="This fat thing looks like someones parent",price=0,stat=14,image=image.placeholder},
-    {name="Small large LootCrate(tm)",description="Okay, what happened here, where is my loot?",price=0,stat=17,image=image.placeholder},
-    {name="Extra medium Cargo Bay",description="Sounds like a swedish thing...",price=0,stat=20,image=image.placeholder},
-    {name="Three Dimensional Cargo",description="How does the third dimension work? What does it look like? All we know is that it has virtually unlimited storage capacities.",price=9001,stat=150,image=image.placeholder}},
+  { {name="Standard Cargo Bay",description="The standard mining rig cargo bay. Not very big.",price=0,stat=6,image=image.bays.standard},
+    {name="Extra cardboard box",description="This box is made out of recycled paper from Miljöpartisternas språkrörs pappskallar.",price=750,stat=1,image=image.bays.cardboard},
+    {name="Barely functioning compression unit",description="This one is 90% weaker and 80& cheaper.",price=0,stat=1,image=image.bays.bad},
+    {name="Medium Cargo Bay",description="It stores and talks to dead ores.",price=0,stat=2,image=image.placeholder},
+    {name="Compression unit",description="When size does matter.",price=0,stat=2,image=image.bays.okay},
+    {name="Ore cleaner",description="This removes dirt and stone from your ores to make them take up to 20% less space.",price=0,stat=2,image=image.bays.cleaner},
+    {name="Sizable Cargo Bay",description="Much larger than the medium version. An excellent purchase for any respectable miner.",price=0,stat=3,image=image.placeholder},
+    {name="Compression unit 4711",description="The latest Compression unit by ATii Technologies, Inc.",price=0,stat=3,image=image.bays.good},
+    {name="Three Dimensional Cargo",description="How does the third dimension work? What does it look like? All we know is that it has virtually unlimited storage capacities. Invented by Skalman.",price=9001,stat=130,image=image.placeholder}},
   -- UI ======================================================================================================================
   { {name="Standard sensors",description="The basic hull and fuel meters.",price=0,stat=0,image=image.placeholder},
     {name="GPS",description="Adds a minimap with an automatic depth marker and tells you how much you have in your cargo bay.",price=750,stat=1,image=image.placeholder},
@@ -105,7 +105,7 @@ end
 
 u.names = {"Hulls","Drills","Engines","Radiators","Fuel Tanks","Cargo bays","UI upgrades"}
 u.statUnit = {" Hull Points"," Blocks/s"," Blocks/s^2","%"," Litres"," blocks",""}
-u.statName = {"Strength:","Speed:","Acceleration:","Reduces damage by","Capacity:","Storage:","UI Level:"}
+u.statName = {"Strength:","Speed:","Acceleration:","Reduces damage by","Capacity:","Storage increase:","UI Level:"}
 u.multiplier = {1,1,1,100,1,1,1}
 
 u.purchased = {
@@ -132,7 +132,9 @@ function u.purchase(a,b,c)
       end
     end
     --print(highest)
-    if highest <= b then
+    if a == 6 then
+      p.cargoSize = p.cargoSize + item.stat
+    elseif highest <= b then
       --print("hello")
       if a == 1 then
         p.maxhealth = item.stat
@@ -150,8 +152,8 @@ function u.purchase(a,b,c)
       elseif a == 5 then
         p.tanksize = item.stat
         p.fuel = item.stat
-      elseif a == 6 then
-        p.cargoSize = item.stat
+      --elseif a == 6 then
+      --  p.cargoSize = p.cargoSize + item.stat
       elseif a == 7 then
         UI.level = item.stat
         if item.stat == 8 then
