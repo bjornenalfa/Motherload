@@ -125,4 +125,16 @@ i.radiators.freezer = love.graphics.newImage("img/upgrades/radiators/freezer.png
 i.radiators.car = love.graphics.newImage("img/upgrades/radiators/car.png")
 i.radiators.standard = love.graphics.newImage("img/upgrades/radiators/standard.png")
 
+i.tanks = {}
+
+
+
+i.bays = {}
+
+
+
+i.UI = {}
+
+
+
 --i.. = love.graphics.newImage("img/upgrades//.png")
