@@ -7,6 +7,11 @@ require "functions"
 require "LoveFrames" -- Copyright (c) 2012-2014 Kenny Shields
 -- tabbutton, progressbar, list and Blue skin modified by ATii
 
+--PUSH TO GITHUB:
+--git add .
+--git commit -m 'commit message'
+--git push origin master
+
 require "image"
 require "gradient"
 require "world"
