@@ -4,8 +4,8 @@ local i = items
 items.list = {
   {name="Dynamite",description="Will blow up all blocks within a radius of 1 block.",price=250,image=image.placeholder},
   {name="C4",description="Will blow up all blocks within a radius of 3 blocks.",price=1000,image=image.placeholder},
-  {name="Nanobots",description="Use these to do repair 200 hull points.",price=3000,image=image.placeholder},
-  {name="Emergency Fuel",description="Use this to restore 30 liters of fuel.",price=3000,image=image.placeholder},
+  {name="Nanobots",description="Use these to do repair 50 hull points.",price=3000,image=image.placeholder},
+  {name="Emergency Fuel",description="Use this to restore 10 liters of fuel.",price=3000,image=image.placeholder},
   {name="Nuke",description="Will blow up all blocks within a radius of 10 blocks.",price=9001,image=image.placeholder},
   {name="Quantum teleporter",description="Teleports you randomly above the surface (often damaging your hull).",price=10000,image=image.placeholder},
   {name="Matter transporter",description="Returns you safely to the surface.",price=50000,image=image.placeholder},
@@ -56,10 +56,10 @@ function items.activate(a)
   elseif a == 2 then
     return player.explode(3,true)
   elseif a == 3 then
-    p.health = p.health + 200 > p.maxhealth and p.maxhealth or p.health + 200
+    p.health = p.health + 50 > p.maxhealth and p.maxhealth or p.health + 50
     return true
   elseif a == 4 then
-    p.fuel = p.fuel + 30 > p.tanksize and p.tanksize or p.fuel + 30
+    p.fuel = p.fuel + 10 > p.tanksize and p.tanksize or p.fuel + 10
     return true
   elseif a == 5 then
     return player.explode(10,true)

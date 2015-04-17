@@ -13,6 +13,7 @@ p.baseyacc = 3
 p.xacc = 2
 p.yacc = 3
 p.gravity = 3.5
+p.resistance = 0.995
 
 p.fuel = 60
 p.tanksize = 60
@@ -105,6 +106,8 @@ function player.update(dt)
     p.xacc = p.basexacc * ((p.basexacc+60)/(3.8+60))^p.cargoUsed
     p.yacc = p.baseyacc * ((p.baseyacc+60)/(3.8*2.05+60))^p.cargoUsed
     
+    p.yv = p.yv * (p.resistance ^ (dt * 60))
+    
     local xvchange = 0
     if love.keyboard.isDown("left") then
       xvchange = - p.xacc * dt
@@ -143,24 +146,24 @@ function player.update(dt)
     local x = math.ceil(p.x/s)
     local y = math.ceil(p.y/s)
     
-    p.x = p.x + p.xv * (dt / (1 / 60))
-    p.y = p.y + p.yv * (dt / (1 / 60))
-    p.yv = p.yv * (0.995 ^ (dt / (1 / 60)))
+    p.x = p.x + p.xv * (dt * 60)
+    p.y = p.y + p.yv * (dt * 60)
     
     --print(x..":"..time.."."..tostring(world.terrain[x]))
     if not noclip then
       if world.terrain[x][y] then
-        p.x = p.x - p.xv * (dt / (1 / 60)) * 2
-        p.y = p.y - p.yv * (dt / (1 / 60)) * 2
+        p.checkFallDamage()
+        p.x = p.x - p.xv * (dt * 60) * 2
+        p.y = p.y - p.yv * (dt * 60) * 2
         p.xv = p.xv * -1
         p.yv = p.yv * -1
       end
     end
     
     if p.y < world.height * s and world.terrain[x][y+1] and p.y + p.r >= y*s then
-      p.xv = p.xv * (0.98 ^ (dt / (1 / 60)))
+      p.xv = p.xv * (0.98 ^ (dt * 60))
     else
-      p.xv = p.xv * (0.9935 ^ (dt / (1 / 60)))
+      p.xv = p.xv * (0.9935 ^ (dt * 60))
       if not noclip then p.yv = p.yv + p.gravity*dt end
     end
     
@@ -197,9 +200,7 @@ function player.update(dt)
       end
       if p.y < world.height * s and world.terrain[x][y+1] then
         if p.y + p.r > y*s then
-          if p.yv > 4 then
-            p.health = p.health - p.yv*20
-          end
+          p.checkFallDamage()
           p.y = y*s - p.r
           p.yv = p.bounce and -p.yv or 0
         end
@@ -285,6 +286,13 @@ function player.update(dt)
     end
   end
   --world.terrain[math.ceil(p.x/world.scale)][math.ceil(p.y/world.scale)] = 0
+end
+
+function player.checkFallDamage()
+  if p.yv > 4 then
+    p.health = p.health - ((p.yv-3)^2)*20
+    print("Fall damage: "..(((p.yv-3)^2)*20).."yv: "..p.yv)
+  end
 end
 
 function player.startDigging()

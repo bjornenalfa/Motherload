@@ -8,6 +8,9 @@ function u.init()
       u.purchase(i,9)
       u.unlocked[i] = 9
     end
+    for i = 1,world.height do
+      world.terrain[math.floor(p.x/world.scale)][i] = nil
+    end
   else
     for i = 1,7 do
       u.purchase(i,1)

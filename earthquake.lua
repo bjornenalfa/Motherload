@@ -121,7 +121,7 @@ function earthquake.update(dt)
       e.depthmod = 0
       e.start()
     else
-      e.depthmod = e.depthmod + e.pDepth * 0.25
+      e.depthmod = e.depthmod + e.pDepth * 1
     end
     e.pDepth = 0
   end

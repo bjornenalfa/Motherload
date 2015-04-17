@@ -106,7 +106,8 @@ function UI.draw()
     love.graphics.print(fuelneeded,0,200)
   end
   if UI.level >= 6 and p.y>0 then
-    --[[local dt = 1/love.timer.getFPS()
+    -- OLD VERSION (IT WAS ALMOST RIGHT!!)
+    --[==[--[[local dt = 1/love.timer.getFPS()
     local res = (0.995 ^ (dt / (1 / 60)))
     local maxvps = p.yacc*((res^(10000*love.timer.getFPS())-1)/(res-1))
     local maxvpf = maxvps/love.timer.getFPS()
@@ -133,5 +134,33 @@ function UI.draw()
     
     --love.graphics.print(p.yv,50,120)
     --love.graphics.print(maxvps,50,132)
+    --]==]
+    
+    local frames = -100000000000
+    local dt = 1/love.timer.getFPS()
+    local kdt = p.resistance^(dt*60)
+    
+    local noAccFrames = math.floor(math.log((-p.yv/dt*(kdt-1)/p.yacc)+1)/math.log(kdt))
+    
+    --[[local kk1 = kdt/(kdt-1)
+    local goal = ((p.y*(kdt-1)/((-p.yacc)*dt^2))+kk1-1)/kk1
+    for i = 1+noAccFrames,p.y do
+      if (kdt^i)-i <= goal then
+        frames = i-noAccFrames
+        break
+      end
+    end]]
+    
+    for i = 1,p.y+1000 do
+      if (p.yacc*(((kdt*(kdt^((i+noAccFrames)-1)))/(kdt-1))-(i+noAccFrames))/(kdt-1))*dt*dt-(p.yacc*(((kdt*(kdt^(noAccFrames-1)))/(kdt-1))-noAccFrames)/(kdt-1))*dt*dt > p.y*dt then
+        frames = i
+        break
+      end
+    end
+    
+    love.graphics.setColor(0,255,0)
+    love.graphics.print(frames,50,100)
+    --love.graphics.print(noAccFrames,50,120)
+    --love.graphics.print(math.floor(frames*dt*0.15*10+0.5)/10,70,100)
   end
 end
