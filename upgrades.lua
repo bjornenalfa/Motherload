@@ -70,19 +70,19 @@ u.list = {
   { {name="Standard Cargo Bay",description="The standard mining rig cargo bay. Not very big.",price=0,stat=6,image=image.bays.standard},
     {name="Extra cardboard box",description="This box is made out of recycled paper from Miljöpartisternas språkrörs pappskallar.",price=750,stat=1,image=image.bays.cardboard},
     {name="Barely functioning compression unit",description="This one is 90% weaker and 80& cheaper.",price=0,stat=1,image=image.bays.bad},
-    {name="Medium Cargo Bay",description="It stores and talks to dead ores.",price=0,stat=2,image=image.placeholder},
+    {name="UnSafe",description="I am sure you can use my old broken safe to store ores.",price=0,stat=2,image=image.bays.safe},
     {name="Compression unit",description="When size does matter.",price=0,stat=2,image=image.bays.okay},
     {name="Ore cleaner",description="This removes dirt and stone from your ores to make them take up to 20% less space.",price=0,stat=2,image=image.bays.cleaner},
-    {name="Sizable Cargo Bay",description="Much larger than the medium version. An excellent purchase for any respectable miner.",price=0,stat=3,image=image.placeholder},
+    {name="TransVolume-Regulator",description="This amazing device that was invented by Skalman allows you to shrink the ores temporarily.",price=0,stat=3,image=image.bays.trans},
     {name="Compression unit 4711",description="The latest Compression unit by ATii Technologies, Inc.",price=0,stat=3,image=image.bays.good},
-    {name="Three Dimensional Cargo",description="How does the third dimension work? What does it look like? All we know is that it has virtually unlimited storage capacities. Invented by Skalman.",price=9001,stat=130,image=image.placeholder}},
+    {name="Three Dimensional Cargo",description="How does the third dimension work? What does it look like? All we know is that it has virtually unlimited storage capacities.",price=9001,stat=130,image=image.bays.three}},
   -- UI ======================================================================================================================
   { {name="Standard sensors",description="The basic hull and fuel meters.",price=0,stat=0,image=image.placeholder},
     {name="GPS",description="Adds a minimap with an automatic depth marker and tells you how much you have in your cargo bay.",price=750,stat=1,image=image.placeholder},
     {name="Advanced sensors",description="Adds numerical values on the hull and fuel meters and tells you how fast you dig blocks.",price=0,stat=2,image=image.placeholder},
-    {name="4",description="",price=0,stat=3,image=image.placeholder},
+    {name="4",description="Time to impact",price=0,stat=3,image=image.placeholder},
     {name="Basic CPU",description="Gives you an esimate of the amount of fuel needed to dig a block.",price=0,stat=4,image=image.placeholder},
-    {name="6",description="",price=0,stat=5,image=image.placeholder},
+    {name="6",description="Brake time",price=0,stat=5,image=image.placeholder},
     {name="Advanced CPU",description="Gives you an estimate of the amount of fuel needed to return to the surface.",price=0,stat=6,image=image.placeholder},
     {name="Dynamic camera",description="Makes you able to move the camera. Press y to activate.",price=0,stat=7,image=image.placeholder},
     {name="Infrared camera",description="Makes gaspockets visible.",price=0,stat=8,image=image.placeholder}}
@@ -97,10 +97,13 @@ for i = 1,6 do
   end
 end]]
 
-for i = 1,7 do
+for i = 1,6 do
   for t = 3,9 do
     u.list[i][t].price = math.floor(750*8^((t-2)/2)+0.5)
   end
+end
+for t = 3,9 do
+  u.list[7][t].price = math.floor(400*8^((t-2)/2)+0.5)
 end
 
 u.names = {"Hulls","Drills","Engines","Radiators","Fuel Tanks","Cargo bays","UI upgrades"}

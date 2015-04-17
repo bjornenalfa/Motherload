@@ -140,12 +140,12 @@ i.bays = {}
 i.bays.standard = love.graphics.newImage("img/upgrades/bays/standard.png")
 i.bays.cardboard = love.graphics.newImage("img/upgrades/bays/cardboard.png")
 i.bays.bad = love.graphics.newImage("img/upgrades/bays/bad.png")
---i.bays. = love.graphics.newImage("img/upgrades/bays/.png")
+i.bays.safe = love.graphics.newImage("img/upgrades/bays/safe.png")
 i.bays.okay = love.graphics.newImage("img/upgrades/bays/okay.png")
 i.bays.cleaner = love.graphics.newImage("img/upgrades/bays/cleaner.png")
---i.bays. = love.graphics.newImage("img/upgrades/bays/.png")
+i.bays.trans = love.graphics.newImage("img/upgrades/bays/trans.png")
 i.bays.good = love.graphics.newImage("img/upgrades/bays/good.png")
---i.bays. = love.graphics.newImage("img/upgrades/bays/.png")
+i.bays.three = love.graphics.newImage("img/upgrades/bays/3d.png")
 
 i.UI = {}
 
