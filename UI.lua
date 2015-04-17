@@ -150,17 +150,25 @@ function UI.draw()
         break
       end
     end]]
-    
-    for i = 1,p.y+1000 do
-      if (p.yacc*(((kdt*(kdt^((i+noAccFrames)-1)))/(kdt-1))-(i+noAccFrames))/(kdt-1))*dt*dt-(p.yacc*(((kdt*(kdt^(noAccFrames-1)))/(kdt-1))-noAccFrames)/(kdt-1))*dt*dt > p.y*dt then
-        frames = i
-        break
+    if noAccFrames > 0 then
+      for i = 1,p.y do
+        if (p.yacc*(((kdt*(kdt^((i+noAccFrames)-1)))/(kdt-1))-(i+noAccFrames))/(kdt-1))*dt-(p.yacc*(((kdt*(kdt^(noAccFrames-1)))/(kdt-1))-noAccFrames)/(kdt-1))*dt > p.y then
+          frames = i
+          break
+        end
+      end
+    else
+      for i = 1,p.y do
+        if (p.yacc*(((kdt*(kdt^(i-1)))/(kdt-1))-i)/(kdt-1))*dt-(p.yacc*(((kdt*(kdt^(1-1)))/(kdt-1))-1)/(kdt-1))*dt > p.y then
+          frames = i - noAccFrames
+          break
+        end
       end
     end
     
     love.graphics.setColor(0,255,0)
-    love.graphics.print(frames,50,100)
+    --love.graphics.print(frames,50,100)
     --love.graphics.print(noAccFrames,50,120)
-    --love.graphics.print(math.floor(frames*dt*0.15*10+0.5)/10,70,100)
+    love.graphics.print(math.floor(frames*dt*0.15*10+0.5)/10,70,100)
   end
 end
