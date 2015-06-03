@@ -136,7 +136,7 @@ function UI.draw()
     --love.graphics.print(maxvps,50,132)
     --]==]
     
-    local frames = -100000000000
+    local frames = 0
     local dt = 1/love.timer.getFPS()
     local kdt = p.resistance^(dt*60)
     

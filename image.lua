@@ -101,7 +101,7 @@ i.drills.amazonite = love.graphics.newImage("img/upgrades/drills/amazonite.png")
 i.drills.juvelium = love.graphics.newImage("img/upgrades/drills/juvelium.png")
 i.drills.silima = love.graphics.newImage("img/upgrades/drills/silima.png")
 i.drills.tilkal = love.graphics.newImage("img/upgrades/drills/tilkal.png")
-i.drills.atomic = love.graphics.newImage("img/upgrades/drills/atomicdisassembler.png")
+i.drills.atomic = love.graphics.newImage("img/upgrades/drills/atomic.png")
 
 i.engines = {}
 i.engines.standard = love.graphics.newImage("img/upgrades/engines/1.png")
