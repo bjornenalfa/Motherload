@@ -1,4 +1,4 @@
-debugMode = true
+debugMode = false
 
 math.randomseed(os.time())
 
